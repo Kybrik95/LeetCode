@@ -1,5 +1,5 @@
 class Solution:
-    def mySqrt(self, x: int) -> int:
+    def isPerfectSquare(self, x: int) -> bool:
         eps = 0.99
         if x == 0:
             x_next = 0
@@ -12,4 +12,7 @@ class Solution:
                     break
                 else:
                     x_curr = x_next
-        return int(x_next)
+        if int(x_next) * int(x_next) != x:
+            return False
+        else:
+            return True

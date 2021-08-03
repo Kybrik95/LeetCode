@@ -1,6 +1,7 @@
 class Solution:
     def reverse(self, x: int) -> int:
         reversed_x = ''
+        corner = 2**31
         if x < 0:
             sign = '-'
             x = str(x)[1:]
@@ -10,8 +11,7 @@ class Solution:
         reversed_x = reversed_x.join(reversed(x))
         x = int(sign + reversed_x)
         print(x)
-        if x < -2**31 or x > 2**31 - 1:
+        if x < -corner or x > corner - 1:
             return 0
         else:
             return x
-        
